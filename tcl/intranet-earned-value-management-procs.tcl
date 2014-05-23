@@ -215,7 +215,6 @@ ad_proc im_audit_fake_history_for_project {
 			start_date,
 			company_contact_id,
 			company_project_nr,
-			final_company,
 			cost_invoices_cache,
 			cost_quotes_cache,
 			cost_delivery_notes_cache,
@@ -254,7 +253,6 @@ ad_proc im_audit_fake_history_for_project {
 			:start_date,
 			:company_contact_id,
 			:company_project_nr,
-			:final_company,
 			:cost_invoices_cache,
 			:cost_quotes_cache,
 			:cost_delivery_notes_cache,
@@ -587,7 +585,7 @@ set project_budget_converted [expr $cost_invoices_cache * (100.0 - $target_margi
 	set title $title_hash($key)
 	set sum $sum_hash($key)
 	if {0.0 == $sum} { continue }
-	set url "http://www.project-open.org/documentation/portlet_intranet_reporting_dashboard_earned_value"
+	set url "http://www.project-open.org/en/portlet_intranet_reporting_dashboard_earned_value"
 	set alt [lang::message::lookup "" intranet-reporting-dashboard.Click_for_help "Please click on the link for help about the value shown"]
 	append legend_html "
 		<nobr><a href=\"$url\" target=\"_blank\">
